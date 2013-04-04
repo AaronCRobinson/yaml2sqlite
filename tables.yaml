@@ -1,0 +1,34 @@
+job_types:
+  id:
+    primary_key: True
+    datatype: int
+  name:
+    datatype: str
+    unique: True
+job_statuses:
+  id:
+    primary_key: True
+    datatype: int
+  name:
+    datatype: str
+    unique: True
+jobs:
+  id:
+    primary_key: True
+    datatype: int
+  pipeline_id:
+    datatype: int
+  process_id:
+    datatype: int
+  start:
+    datatype: datetime
+  status:
+    datatype: int
+    foreign_key: job_statuses.id
+  type:
+    datatype: int
+    foreign_key: job_types.id
+  log:
+    datatype: str
+  job_parameters_id:
+    datatype: int
